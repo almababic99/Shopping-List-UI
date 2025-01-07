@@ -1,0 +1,11 @@
+.sidebar {
+  background-color: #d3d3d3; 
+  border-right: 2px solid #000; 
+  height: 100vh;
+  padding-top: 100px; 
+  padding-left: 80px; 
+}
+
+.sidebar h2 {
+    margin-bottom: 25px;
+  }
