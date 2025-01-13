@@ -12,7 +12,7 @@ import { ItemService } from './services/item.service';
 export class ItemComponent implements OnInit {
   items: Item[] = []; // This array will store the list of items fetched from the API.
 
-  constructor(private itemService: ItemService) {} // The shopperService is injected into the component
+  constructor(private itemService: ItemService) {} // The itemService is injected into the component
   
   ngOnInit() {
     this.getItems();  // calling the method below
