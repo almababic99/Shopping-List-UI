@@ -31,4 +31,17 @@ export class ItemComponent implements OnInit {
       } 
     );
   }
+
+  deleteItem(id: number) {
+    this.itemService.deleteItem(id).subscribe(  // The component subscribes to this observable to delete item; Calling deleteItem from item.service.ts
+      {
+        next: () => {
+          this.items = this.items.filter(item => item.id !== id);   // Removing deleted item from the local items array
+        },
+        error: (error) => {
+          console.error('Error deletung item', error);
+        }
+      }
+    );
+  }
 }

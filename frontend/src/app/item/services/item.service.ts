@@ -18,7 +18,11 @@ export class ItemService {
     // The apiUrl is the URL for the backend service to get the item data. 
   }
 
-  addItem(item: Item)  {
-    return this.http.post(this.apiUrl + '/addItem', item);
+  addItem(item: Item)  {   // Adding item on backend
+    return this.http.post(this.apiUrl + '/addItem', item);  // Sending http post request to backend with 'item' as parameter; addItem is returning Observable
+  }
+
+  deleteItem(id: number) {  // Deleting item on backend
+    return this.http.delete(this.apiUrl + `/deleteItem/${id}`);   // Sending http delete request to backend with 'id' as parameter: deleteItem is returning Observable
   }
 }
