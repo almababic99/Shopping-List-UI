@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class NewItemComponent {
   itemName: string = '';
 
-  mapperItem: Item | null = null;
+  item: Item | null = null;
 
   message: string = '';  // error message
 
@@ -23,15 +23,15 @@ export class NewItemComponent {
       return;  // avoid submitting if the name is empty
     }
 
-    var mapperItem = {
+    var item = {
       id: 0,
       name: this.itemName
     }
 
-    this.itemService.addItem(mapperItem).subscribe(
+    this.itemService.addItem(item).subscribe(
       {
         next: () => {
-          this.router.navigate(['/items'])
+          this.router.navigate(['/items'])  // navigating back to items after addung item 
         },
         error: (error) => {
           console.error('Error adding item', error);

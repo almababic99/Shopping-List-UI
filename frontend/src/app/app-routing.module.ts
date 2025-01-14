@@ -4,6 +4,7 @@ import { EmptyComponent } from './components/empty/empty.component';
 import { ShopperComponent } from './shopper/shopper.component';
 import { ItemComponent } from './item/item.component';
 import { NewItemComponent } from './item/components/new-item/new-item.component';
+import { EditItemComponent } from './item/components/edit-item/edit-item.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'items/new',
     component: NewItemComponent
+  },
+  {
+    path: 'items/edit/:id',
+    component: EditItemComponent
   }
 ];
 

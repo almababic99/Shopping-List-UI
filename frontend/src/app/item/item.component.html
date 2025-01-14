@@ -16,7 +16,7 @@
       <td>{{ item.name }}</td>
       <td>
         <div class="d-flex gap-2">
-          <a class="btn btn-warning btn-sm mr-3">Edit</a>
+          <a [routerLink]="'/items/edit/' + item.id" class="btn btn-warning btn-sm mr-3">Edit</a>
           <button (click)="deleteItem(item.id)" class="btn btn-danger btn-sm">Delete</button>  <!-- calling deleteItem from item.component.ts -->
         </div>
       </td>
