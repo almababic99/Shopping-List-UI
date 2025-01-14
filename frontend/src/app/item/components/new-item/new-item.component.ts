@@ -14,9 +14,15 @@ export class NewItemComponent {
 
   mapperItem: Item | null = null;
 
+  message: string = '';  // error message
+
   constructor(private itemService: ItemService, private router: Router) {}
 
   onSubmit() {
+    if (!this.itemName) {
+      return;  // avoid submitting if the name is empty
+    }
+
     var mapperItem = {
       id: 0,
       name: this.itemName
@@ -29,6 +35,7 @@ export class NewItemComponent {
         },
         error: (error) => {
           console.error('Error adding item', error);
+          this.message = 'Error adding item. Item with the same name already exists.';  // error message
         },
       }
   );
