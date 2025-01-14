@@ -10,24 +10,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: false
 })
 export class EditItemComponent implements OnInit {
-  itemName: string = '';   
-  itemId: number = 0;
-
-  item: Item = {
+  item: Item = {  // item object
     id: 0,
     name: ''
   };
 
   constructor(private itemService: ItemService, private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit() {
+  ngOnInit() {   // The ngOnInit lifecycle hook runs when the component is initialized (before it is showed on screen)
     this.route.paramMap.subscribe(params => {
       const idParam = params.get('id');  // getting id from url
       if (idParam) {
-        //this.itemId = +idParam;  // + converts string to number
-
-        this.itemService.getItemById(+idParam).subscribe({
-          next: (item) => this.item = item
+        this.itemService.getItemById(+idParam).subscribe({   // + converts string to number
+          next: (item) => this.item = item  // using getItemById we get the item object from backend with its id and assign it to component's item object (before it is edited)
         })
       } 
       else {
@@ -37,8 +32,10 @@ export class EditItemComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("item: ", this.item)
-    this.itemService.editItem(this.item).subscribe({
+    this.itemService.editItem(this.item).subscribe({   
+      // once we submit the form component's item object name is changed automatically because of two-way binding in edit-item.component.html 
+      // (the name of an item is now  the name that is typed in form, and not the name that was in database before for the item with that id)
+      // the editItem is now called with this edited item
       next: () => {
         this.router.navigate(['/items'])   // navigating back to items after editing item
       },
