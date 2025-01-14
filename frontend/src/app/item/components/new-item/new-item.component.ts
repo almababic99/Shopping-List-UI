@@ -23,12 +23,14 @@ export class NewItemComponent {
     }
 
     this.itemService.addItem(mapperItem).subscribe(
-      () => {
-        this.router.navigate(['/items'])
-      },
-      // (error) => {
-        
-    //}
+      {
+        next: () => {
+          this.router.navigate(['/items'])
+        },
+        error: (error) => {
+          console.error('Error adding item', error);
+        },
+      }
   );
   }
 }
