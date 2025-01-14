@@ -5,6 +5,8 @@
       <label for="title" class="form-label">Name</label>
       <input [(ngModel)]="item.name" type="text" id="name" name="name" class="form-control" placeholder="Enter item name"/>
       <!-- The input field is bound to the name property of the item object using Angular's two-way binding [(ngModel)]. This means that the value of item.name will be synchronized with the input field. The type="text" defines it as a text field. -->
+      <!-- Once we open this edit form because of two-way binding the name of an item before edit will be shown from databse -->
+      <!-- When we submit the form it will automatically change the items name of item object in edit-item.component.ts -->
     </div>
   
     <div class="d-flex justify-content-between">
