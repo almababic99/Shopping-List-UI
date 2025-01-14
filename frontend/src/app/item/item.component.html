@@ -11,6 +11,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,12 @@
       <!-- items from item.component.ts -->
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
+      <td>
+        <div class="d-flex gap-2">
+          <a class="btn btn-warning btn-sm mr-3">Edit</a>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
