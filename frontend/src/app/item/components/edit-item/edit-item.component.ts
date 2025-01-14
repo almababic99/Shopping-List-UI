@@ -13,7 +13,10 @@ export class EditItemComponent implements OnInit {
   itemName: string = '';   
   itemId: number = 0;
 
-  item: Item | null = null;
+  item: Item = {
+    id: 0,
+    name: ''
+  };
 
   constructor(private itemService: ItemService, private router: Router, private route: ActivatedRoute) {}
 
@@ -21,7 +24,11 @@ export class EditItemComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const idParam = params.get('id');  // getting id from url
       if (idParam) {
-        this.itemId = +idParam;  // + converts string to number
+        //this.itemId = +idParam;  // + converts string to number
+
+        this.itemService.getItemById(+idParam).subscribe({
+          next: (item) => this.item = item
+        })
       } 
       else {
         console.error('An error occured.');
@@ -30,12 +37,8 @@ export class EditItemComponent implements OnInit {
   }
 
   onSubmit() {
-    var item = {  // creating object 'item' with itemId from url as id and itemName entered in form as name
-      id: this.itemId,
-      name: this.itemName
-    }
-
-    this.itemService.editItem(this.itemId, item).subscribe({
+    console.log("item: ", this.item)
+    this.itemService.editItem(this.item).subscribe({
       next: () => {
         this.router.navigate(['/items'])   // navigating back to items after editing item
       },

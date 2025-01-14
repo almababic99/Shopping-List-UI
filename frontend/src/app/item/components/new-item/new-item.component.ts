@@ -12,8 +12,6 @@ import { Router } from '@angular/router';
 export class NewItemComponent {
   itemName: string = '';
 
-  item: Item | null = null;
-
   message: string = '';  // error message
 
   constructor(private itemService: ItemService, private router: Router) {}
@@ -23,7 +21,7 @@ export class NewItemComponent {
       return;  // avoid submitting if the name is empty
     }
 
-    var item = {
+    const item = {
       id: 0,
       name: this.itemName
     }
