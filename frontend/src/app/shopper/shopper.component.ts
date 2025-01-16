@@ -30,4 +30,20 @@ export class ShopperComponent implements OnInit {
       } 
     );
   }
+
+  deleteShopper(id: number) {
+    const confirmed = confirm(`Are you sure you want to delete this shopper?`);
+    if (confirmed) {
+      this.shopperService.deleteShopper(id).subscribe(  // The component subscribes to this observable to delete shopper; Calling deleteShopper from shopper.service.ts
+        {
+          next: () => {
+            this.shoppers = this.shoppers.filter(shopper => shopper.id !== id);   // Removing deleted shopper from the local shoppers array
+          },
+          error: (error) => {
+            console.error('Error deleting shopper', error);
+          }
+        }
+      );
+    }
+  }
 }

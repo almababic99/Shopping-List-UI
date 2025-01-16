@@ -5,6 +5,8 @@ import { ShopperComponent } from './shopper/shopper.component';
 import { ItemComponent } from './item/item.component';
 import { NewItemComponent } from './item/components/new-item/new-item.component';
 import { EditItemComponent } from './item/components/edit-item/edit-item.component';
+import { EditShopperComponent } from './shopper/components/edit-shopper/edit-shopper.component';
+import { NewShopperComponent } from './shopper/components/new-shopper/new-shopper.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'items/edit/:id',
     component: EditItemComponent
+  },
+  {
+    path: 'shoppers/new',
+    component: NewShopperComponent
+  },
+  {
+    path: 'shoppers/edit/:id',
+    component: EditShopperComponent
   }
 ];
 

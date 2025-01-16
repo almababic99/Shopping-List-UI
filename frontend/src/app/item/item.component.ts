@@ -41,7 +41,7 @@ export class ItemComponent implements OnInit {
             this.items = this.items.filter(item => item.id !== id);   // Removing deleted item from the local items array
           },
           error: (error) => {
-            console.error('Error deletung item', error);
+            console.error('Error deleting item', error);
           }
         }
       );

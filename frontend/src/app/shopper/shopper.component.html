@@ -6,6 +6,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,17 @@
       <!-- shoppers from shopper.component.ts -->
       <td>{{ shopper.id }}</td>
       <td>{{ shopper.name }}</td>
+      <td>
+        <div class="d-flex gap-2">
+          <a [routerLink]="'/shoppers/edit/' + shopper.id" class="btn btn-warning btn-sm mr-3">Edit</a>
+          <button (click)="deleteShopper(shopper.id)" class="btn btn-danger btn-sm">Delete</button>  <!-- calling deleteShopper from shopper.component.ts -->
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
+
+<div class="text-end mb-3">
+  <!-- Link to NewShopperComponent -->
+  <a routerLink="/shoppers/new" class="btn btn-primary">Add New Shopper</a>
+</div>

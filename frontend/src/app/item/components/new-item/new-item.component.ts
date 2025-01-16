@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ItemService } from '../../services/item.service';
-import { Item } from '../../models/item.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -29,7 +28,7 @@ export class NewItemComponent {
     this.itemService.addItem(item).subscribe(
       {
         next: () => {
-          this.router.navigate(['/items'])  // navigating back to items after addung item 
+          this.router.navigate(['/items'])  // navigating back to items after adding item 
         },
         error: (error) => {
           console.error('Error adding item', error);
