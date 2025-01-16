@@ -5,9 +5,10 @@ import { NewShopperComponent } from './components/new-shopper/new-shopper.compon
 import { EditShopperComponent } from './components/edit-shopper/edit-shopper.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { ShoppingListsComponent } from './components/shopping-lists/shopping-lists.component';
 
 @NgModule({
-  declarations: [ShopperComponent, NewShopperComponent, EditShopperComponent],
+  declarations: [ShopperComponent, NewShopperComponent, EditShopperComponent, ShoppingListsComponent],
   imports: [CommonModule, FormsModule, AppRoutingModule],
 })
 export class ShopperModule { }

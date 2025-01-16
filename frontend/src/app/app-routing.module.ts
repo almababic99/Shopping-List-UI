@@ -7,6 +7,7 @@ import { NewItemComponent } from './item/components/new-item/new-item.component'
 import { EditItemComponent } from './item/components/edit-item/edit-item.component';
 import { EditShopperComponent } from './shopper/components/edit-shopper/edit-shopper.component';
 import { NewShopperComponent } from './shopper/components/new-shopper/new-shopper.component';
+import { ShoppingListsComponent } from './shopper/components/shopping-lists/shopping-lists.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'shoppers/edit/:id',
     component: EditShopperComponent
+  },
+  {
+    path: 'shoppers/shopping-lists/:id',
+    component: ShoppingListsComponent
   }
 ];
 

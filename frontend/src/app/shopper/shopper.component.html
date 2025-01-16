@@ -6,6 +6,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Shopping Lists</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -14,6 +15,9 @@
       <!-- shoppers from shopper.component.ts -->
       <td>{{ shopper.id }}</td>
       <td>{{ shopper.name }}</td>
+      <td>
+        <a [routerLink]="'/shoppers/shopping-lists/' + shopper.id" class="btn btn-info btn-sm">{{ shopper.name }}'s Shopping Lists</a>
+      </td>
       <td>
         <div class="d-flex gap-2">
           <a [routerLink]="'/shoppers/edit/' + shopper.id" class="btn btn-warning btn-sm mr-3">Edit</a>
