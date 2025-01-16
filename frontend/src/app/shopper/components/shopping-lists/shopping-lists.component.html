@@ -16,15 +16,16 @@
           <li *ngFor="let item of shoppingList.items">{{ item.item.name }}</li>
         </ul>
       </td>
-      <td></td>
+      <td>
+        <div class="d-flex gap-2">
+          <button (click)="deleteShoppingList(shoppingList.id)" class="btn btn-danger btn-sm">Delete</button>  <!-- calling deleteShoppingList from shopping-list.component.ts -->
+        </div>
+      </td>
     </tr>
-    <td></td>
-    <td></td>
-    <td></td>
   </tbody>
 </table>
 
 <div class="text-end mb-3">
-  <a class="btn btn-primary">Add New Shopping List</a>
+  <a [routerLink]="'/shoppers/new-shopping-list/' + shopper.id" class="btn btn-primary">Add New Shopping List</a>
 </div>
 

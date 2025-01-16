@@ -6,9 +6,10 @@ import { EditShopperComponent } from './components/edit-shopper/edit-shopper.com
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { ShoppingListsComponent } from './components/shopping-lists/shopping-lists.component';
+import { NewShoppingListComponent } from './components/new-shopping-list/new-shopping-list.component';
 
 @NgModule({
-  declarations: [ShopperComponent, NewShopperComponent, EditShopperComponent, ShoppingListsComponent],
+  declarations: [ShopperComponent, NewShopperComponent, EditShopperComponent, ShoppingListsComponent, NewShoppingListComponent],
   imports: [CommonModule, FormsModule, AppRoutingModule],
 })
 export class ShopperModule { }

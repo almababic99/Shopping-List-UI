@@ -53,4 +53,20 @@ export class ShoppingListsComponent implements OnInit {
       }
     );
   }
+
+  deleteShoppingList(id: number) {
+    const confirmed = confirm(`Are you sure you want to delete this shopping list?`);
+    if (confirmed) {
+      this.shoppingListService.deleteShoppingList(id).subscribe(  // The component subscribes to this observable to delete shopping list; Calling deleteShoppingList from shoppingList.service.ts
+        {
+          next: () => {
+            this.shoppingLists = this.shoppingLists.filter(shoppingList => shoppingList.id !== id);   // Removing deleted shopping list from the local shopping lists array
+          },
+          error: (error) => {
+            console.error('Error deleting shopping list', error);
+          }
+        }
+      );
+    }
+  }
 }

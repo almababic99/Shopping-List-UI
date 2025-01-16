@@ -4,5 +4,5 @@ import { ShoppingListItem } from "./shoppingListItem";
 export interface ShoppingList {
     id: number,
     shopper: Shopper,
-    items: ShoppingListItem[]
+    items: ShoppingListItem[]  
 }

@@ -16,4 +16,9 @@ export class ShoppingListService {
       `${this.apiUrl}/shoppingLists/${shopperId}`
     );
   }
+
+  deleteShoppingList(id: number) {
+    // Deleting shopping list on backend
+    return this.http.delete(`${this.apiUrl}/deleteShoppingList/${id}`); // Sending http delete request to backend with 'id' as parameter
+  }
 }
