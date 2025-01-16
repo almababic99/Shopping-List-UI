@@ -9,6 +9,15 @@
     </tr>
   </thead>
   <tbody>
+    <tr *ngFor="let shoppingList of shoppingLists">
+      <td>{{ shoppingList.id }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let item of shoppingList.items">{{ item.item.name }}</li>
+        </ul>
+      </td>
+      <td></td>
+    </tr>
     <td></td>
     <td></td>
     <td></td>

@@ -9,6 +9,7 @@ import { EditShopperComponent } from './shopper/components/edit-shopper/edit-sho
 import { NewShopperComponent } from './shopper/components/new-shopper/new-shopper.component';
 import { ShoppingListsComponent } from './shopper/components/shopping-lists/shopping-lists.component';
 
+
 const routes: Routes = [
   {
     path: '',
