@@ -8,3 +8,8 @@ table caption {
   font-size: 1.25rem; 
   margin-bottom: 10px; 
 }
+
+.invalid-feedback {
+  display: block;  
+  color: #dc3545;  
+}

@@ -28,3 +28,7 @@
   <!-- Link to NewItemComponent -->
   <a routerLink="/items/new" class="btn btn-primary">Add New Item</a>
 </div>
+
+<div *ngIf="message" class="invalid-feedback">  <!-- error message if item can't be deleted -->
+  {{ message }}
+</div>

@@ -12,6 +12,8 @@ import { ItemService } from './services/item.service';
 export class ItemComponent implements OnInit {
   items: Item[] = []; // This array will store the list of items fetched from the API.
 
+  message: string = ''; // error message
+
   constructor(private itemService: ItemService) {} // The itemService is injected into the component
   
   ngOnInit() {
@@ -42,6 +44,7 @@ export class ItemComponent implements OnInit {
           },
           error: (error) => {
             console.error('Error deleting item', error);
+            this.message = "Item is in a shopping list and it can't be deleted";  // error message
           }
         }
       );
