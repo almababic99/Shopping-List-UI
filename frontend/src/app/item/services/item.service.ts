@@ -7,7 +7,7 @@ import { Item } from '../models/item.model';
   providedIn: 'root'
 })
 export class ItemService {
-  private apiUrl = 'https://localhost:7092/api/item';  // Url to fetch items
+  private apiUrl = 'https://localhost:7092/api/item';  // API url
 
   constructor(private http: HttpClient) { } // This is the constructor of the ItemService class. It injects an instance of the HttpClient into the service.
 

@@ -7,7 +7,7 @@ import { Shopper } from '../models/shopper.model';
   providedIn: 'root',
 })
 export class ShopperService {
-  private apiUrl = 'https://localhost:7092/api/shopper'; // Url to fetch shoppers
+  private apiUrl = 'https://localhost:7092/api/shopper'; // API url
 
   constructor(private http: HttpClient) {} // This is the constructor of the ShopperService class. It injects an instance of the HttpClient into the service.
 

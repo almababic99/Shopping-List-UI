@@ -14,7 +14,7 @@ export class ItemComponent implements OnInit {
 
   message: string = ''; // error message
 
-  constructor(private itemService: ItemService) {} // The itemService is injected into the component
+  constructor(private itemService: ItemService) {}
   
   ngOnInit() {
     this.getItems();  // calling the method below

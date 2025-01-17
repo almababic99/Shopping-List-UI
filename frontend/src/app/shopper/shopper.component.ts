@@ -11,7 +11,7 @@ import { ShopperService } from './services/shopper.service';
 export class ShopperComponent implements OnInit {
   shoppers: Shopper[] = []; // This array will store the list of shoppers fetched from the API.
 
-  constructor(private shopperService: ShopperService) {} // The shopperService is injected into the component
+  constructor(private shopperService: ShopperService) {} 
 
   ngOnInit() {
     this.getShoppers();  // calling the method below
