@@ -46,7 +46,7 @@ export class NewShoppingListComponent implements OnInit {
 
   onItemChange(event: any, item: Item) {
     // items selection (checkbox)
-    // Check if the item is already in the selectedItems array
+    // Check if the item is already in the shoppingListItems array
     if (event.target.checked) {
       // Add the item to the selectedItems array if it isn't already there
       if (!this.shoppingListItems.find((i) => i.id === item.id)) {
@@ -54,7 +54,7 @@ export class NewShoppingListComponent implements OnInit {
       }
     } else {
       // Remove the item when unchecked
-      this.shoppingListItems = this.shoppingListItems.filter((i) => i.id !== item.id); // Remove the item from selectedItems
+      this.shoppingListItems = this.shoppingListItems.filter((i) => i.id !== item.id); // Remove the item from shoppingListItems
     }
   }
 
